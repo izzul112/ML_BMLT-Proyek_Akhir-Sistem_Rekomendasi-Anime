@@ -4,6 +4,19 @@
 
 Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
 
+Anime sebuah film animasi dari Jepang yang sangat populer dan mungkin banyak dari sebagian kalian yang merasa nostalgia ketika waktu kecil sering menontonnya di televisi. Sekarang untuk menontonnya banyak di antara kita yang sering mengunjungi situs-situs *streaming* seperti Bsite, IQiy, atau bahkan di kanal Youtube seperti Ani-One, Muse Indonesia dan Muse Asia.
+
+Kepopuleran Anime saat memang lagi tinggi-tingginya, hal ini disebabkan banyak judul-judul besar Anime yang sudah punya basis penggemar yang besar, di musim panas 2022 ini banyak yang mendapat lanjutan musim keduanya misal: Hataraku Maou-sama!!, Kanojo, Okarishimasu 2nd Season, Made in Abyss: Retsujitsu no Ougonkyou, Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e (TV) 2nd Season beberapa anime ini sudah adalah contoh anime yang memang sudah memiliki basis penggemar yang besar, apalagi judul Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e atau sering di sebut juga dengan Classroom of the Elite yang basis penggemarnya sering menyebut diri mereka *Wibu Elite*, yang di rumorkan tidak akan mendapat lanjutan musim kedua musim ini mendapat kelanjutan musim keduanya. Juga Anime Overlord musim keempat yang sudah sangat ditunggu-tunggu oleh para penggemarnya.
+
+![image](https://user-images.githubusercontent.com/43197282/182755994-e4e082a1-d997-4b59-bffd-f675c4973c1b.png)
+![image](https://user-images.githubusercontent.com/43197282/182756138-d9a75610-75c8-4c5a-a645-f3c4694ab197.png)
+![image](https://user-images.githubusercontent.com/43197282/182756296-1afc570b-09c7-456c-a2ce-12fa73adf741.png)
+
+Melihat tingginya kepopuleran yang terjadi sekarang juga membawa berkah tersendiri bagi industri *streaming* untuk medulang cuan yang banyak. Dengan adanya situs-situs streaming seperti disebutkan diatas membantu kita
+
+
+
+
 **Rubrik/Kriteria Tambahan (Opsional):**
 
 - Jelaskan mengapa proyek ini penting untuk diselesaikan.
