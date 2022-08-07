@@ -44,42 +44,68 @@ Bagian laporan ini mencakup:
 
 Menjelaskan pernyataan masalah:
 
-- An
-- Pernyataan Masalah 2
+- Anda belum memiliki sistem rekomendasi, yang memberikan rekomendasi-rekomendasi Anime yang mungkin di sukai oleh pengguna di situs *streaming* Anda.
+- Anda belum mengetahui preferensi dari pengguna situs *streaming* Anda.
 - Pernyataan Masalah n
 
 ### Goals
 
 Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
 
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional):**
-
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut:
+- Anda ingin meningkatkan pengalaman pengguna dengan memberikan rekomendasi-rekomendasi Anime yang mungkin di sukai oleh pengguna di situs *streaming* Anda.
+- Anda ingin mengetahui preferensi dari pengguna situs *streaming* Anda.
 
 ### Solution statements:
+
 - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+- Kita akan menggunkana pendekatan Content-based Filtering, untuk memberikan rekomendasi Anime.
+- Kita akan menggunakan metrik `cosine_similarity` untuk menentukan kemiripan dari suatu judul Anime.
+- Kita akan menggunkana metrik `Precision` untuk menilai seberapa akurat hasil rekomendasi dari sistem rekomendasi yang kita buat.
 
 ## Data Understanding
 
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: UCI Machine Learning Repository.
+Kita akan menggunkan dataset yang berisi 23 variabel yang sering muncul ketika Anda melihat deskripsi suatu Anime di situs MyAnimeList[1]. File dataset yang akan kita gunakan dalam proyek ini adalah anime_list.csv yang berisi 23 vaiabel dan 18.000 judul Anime.
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
+Sumber dataset yang akan kita gunakan berasal dari [Kaggle](https://www.kaggle.com/datasets/snehaanbhawal/anime-list-for-recommendation-system-june-2021). Yang di publis oleh [SNEHAAN BHAWAL](https://www.kaggle.com/snehaanbhawal).
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
+**Variabel-variabel pada *Anime List for Recommendation System* dataset adalah sebagai berikut:**
 
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+- mal_id : id unik dari situs myanimelist.net yang mengidentifikasi Anime.
+- title : Judul dari Anime
+- synopsis : Sinopsis, ringkasan singkat yang memberikan gambaran tentang suatu karya.
+- background : Latar belakang.
+- aired : Rentang waktu anime ditayangkan. contoh format: "30 Sep 2004 sampai 29 Sep 2005".
+- airing : Apakah saat ini sedang ditayangkan atau tidak. 0 jika anime telah berakhir 1 jika sedang berlangsung
+- duration : Durasi per-episode.
+- episodes : Jumlah episode dari suatu judul Anime.
+- type : Jenis Anime seperti: ['TV', 'Movie', 'OVA', 'Special', 'ONA', 'Music', 'Unknown']
+- favorites : Jumlah orang yang memfavoritkan anime ini.
+- members : Jumlah anggota.
+- rank : Peringkat per Juni 2021.
+- popularity : Peringkat Popularitas per Juni 2021.
+- score : Skor rata-rata yang diberikan oleh pengguna.
+- scored_by : Jumlah orang yang merating Anime.
+- rating : Peringkat diberikan untuk anime.['PG - Anak', 'PG-13 - Remaja 13 tahun ke atas', 'G - Semua Usia', 'R+ - Ketelanjangan Ringan', 'R - 17+','Rx - Hentai' ]
+- premiered : Tahun dan musim pemutaran perdana.
+- genres : Genre Anime.
+- related : Anime terkait.
+- status : Status Anime apakah sedang tayang saat ini atau tidak.
+- licensors : Nama Pemberi Lisensi.
+- producers : Nama Produser.
+- studios : Nama studio yang menggerjakan.
 
-**Rubrik/Kriteria Tambahan (Opsional):**
+Kita akan melakukan sedikit analisis untuk mengethui beberapa hal tentang variabel diatas diantaranya :
 
-Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+1. Kita akan melihat ada berapa jumlah baris dari data dalam tampilan tabel.
+2. Kita akan melihat tipe data dari 21 kolom di dataset.
+3. Kita akan mengecek deskripsi statistik data.
+4. Kita akan melihat apakah ada data yang kosong / tidak ada isinya.
+5. Kita akan melihat apakah data kita memiliki outliers.
+6. Kita akan melihat variabel apa saja yang memiliki hubungan yang kuat atas klasifikasi harga suatu hp.
+
+Langsung saja kita mulai dari yang pertama yaitu:
+
+**1. Kita akan melihat ada berapa jumlah baris dari data dalam tampilan tabel.**
 
 ## Data Preparation
 
