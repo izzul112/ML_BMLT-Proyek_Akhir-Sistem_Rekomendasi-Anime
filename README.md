@@ -106,9 +106,34 @@ Langsung saja kita mulai dari yang pertama yaitu:
 
 **1. Kita akan melihat ada berapa jumlah baris dari data dalam tampilan tabel.**
 
+Kita akan menggunakan menggunakan kode `data_anime`, `data_anime` adalah nama variabel yang kita ganakan saat meload dataset anime_list.csv.
+
+![image](https://user-images.githubusercontent.com/43197282/183354940-0cb40f38-e25e-4b84-b7ad-d4e970ac6c38.png)
+![image](https://user-images.githubusercontent.com/43197282/183355330-294e4d4f-7156-4a51-ac5a-e7a0c8a81663.png)
+
+Dari kode `data_anime` kita mendapat informasi:
+
+*   Ada 18.162 baris dataset anime_list.csv kita
+*   Dan terdapat 23 kolom
+
+**2. Kita akan melihat tipe data dari kedua dataset kita.**
+
+Kita akan menggunakan `data_anime.info()`, `.info()` akan menampilkan informasi tipe data 7 kolom dataset anime.csv yang kita gunakan.
+
+![image](https://user-images.githubusercontent.com/43197282/183356843-19b0c428-aab4-4a58-b04e-0c2b684b2bfc.png)
+
+Dari *output* `data_anime.info()`, terlihat bahwa:
+
+*   Terdapat 2 kolom dengan tipe data float64, yaitu: rank, score.
+*   Terdapat 7 kolom dengan tipe data int64, yaitu: mal_id, airing, episodes, favorites, members, popularity, scored_by.
+*   Terdapat 14 kolom dengan tipe data object, yaitu: title, synopsis, background, aired, duration, type, rating, premiered, genres, related, status, licensors, producers, studios.
+
+
 ## Data Preparation
 
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+
+
 
 **Rubrik/Kriteria Tambahan (Opsional):**
 
