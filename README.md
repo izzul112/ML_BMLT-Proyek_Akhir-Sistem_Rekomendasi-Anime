@@ -25,15 +25,6 @@ Dengan harapan bahwa hal itu bisa meningkatkan keuntungan bagi perusahaan dan te
 
 - [Referensi]()
 
-
-
-
-**Rubrik/Kriteria Tambahan (Opsional):**
-
-- Jelaskan mengapa proyek ini penting untuk diselesaikan.
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Referensi
-
 ## Business Understanding
 
 Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
@@ -46,7 +37,6 @@ Menjelaskan pernyataan masalah:
 
 - Anda belum memiliki sistem rekomendasi, yang memberikan rekomendasi-rekomendasi Anime yang mungkin di sukai oleh pengguna di situs *streaming* Anda.
 - Anda belum mengetahui preferensi dari pengguna situs *streaming* Anda.
-- Pernyataan Masalah n
 
 ### Goals
 
@@ -99,10 +89,8 @@ Kita akan melakukan sedikit analisis untuk mengethui beberapa hal tentang variab
 2. Kita akan melihat tipe data dari 21 kolom di dataset.
 3. Kita akan mengecek deskripsi statistik data.
 4. Kita akan melihat apakah ada data yang kosong / tidak ada isinya.
-5. Kita akan melihat apakah data kita memiliki outliers.
-6. Kita akan melihat variabel apa saja yang memiliki hubungan yang kuat atas klasifikasi harga suatu hp.
 
-Langsung saja kita mulai dari yang pertama yaitu:
+**Langsung saja kita mulai dari yang pertama yaitu:**
 
 **1. Kita akan melihat ada berapa jumlah baris dari data dalam tampilan tabel.**
 
@@ -128,6 +116,32 @@ Dari *output* `data_anime.info()`, terlihat bahwa:
 *   Terdapat 7 kolom dengan tipe data int64, yaitu: mal_id, airing, episodes, favorites, members, popularity, scored_by.
 *   Terdapat 14 kolom dengan tipe data object, yaitu: title, synopsis, background, aired, duration, type, rating, premiered, genres, related, status, licensors, producers, studios.
 
+**3. Kita akan mengecek deskripsi statistik data.**
+
+Kita akan mengeceknya dengan fungsi `describe()`. Sehingga keseluruhan kodenya adalah `data_anime.describe()`, hasilnya seperti dibawah.
+
+![image](https://user-images.githubusercontent.com/43197282/183360030-d52f78e9-7c16-4b14-bd87-e3a13d33913c.png)
+
+Fungsi `describe()` memberikan informasi statistik pada masing-masing kolom, antara lain:
+
+*   Count  adalah jumlah sampel pada data.
+*   Mean adalah nilai rata-rata.
+*   Std adalah standar deviasi.
+*   Min yaitu nilai minimum setiap kolom.
+*   25% adalah kuartil pertama. Kuartil adalah nilai yang menandai batas interval dalam empat bagian sebaran yang sama.
+*   50% adalah kuartil kedua, atau biasa juga disebut median (nilai tengah).
+*   75% adalah kuartil ketiga.
+*   Max adalah nilai maksimum.
+
+Perhatikan pada kolom `score` bisa kita lihat bahwa baris Max atau nilai maksimum yang diberikan oleh rata-rata user adalah 9.17 dan baris Min yaitu nilai terendahnya adalah -1. Niali -1 terjadi ketika user melihat Anime tersebut tapi tidak memberikan rating.
+
+**4. Kita akan melihat apakah ada data yang kosong / tidak ada isinya.**
+
+Kita akan mengeceknya dengan fungsi `.isnull().sum()`. Fungsi `.isnull()` akan mengecek apakah ada data kosng pada setiap baris pada semua kolom di dataset kita, kemudian kita gunakan juga fungsi `.sum()` untuk menjumlahnya sehingga hasilnya akan seperti berikut.
+
+![image](https://user-images.githubusercontent.com/43197282/183362724-aee44298-a310-4a7e-9048-0e10dbaa449a.png)
+
+Dari hasil di atas kita tau bahwa di kolom genres memiliki 67 data kosong.
 
 ## Data Preparation
 
