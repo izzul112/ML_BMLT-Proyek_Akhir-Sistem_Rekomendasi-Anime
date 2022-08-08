@@ -57,9 +57,8 @@ Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
 
 ### Solution statements:
 
-- Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
-- Kita akan menggunkana pendekatan Content-based Filtering, untuk memberikan rekomendasi Anime.
-- Kita akan menggunakan metrik `cosine_similarity` untuk menentukan kemiripan dari suatu judul Anime.
+- Kita akan menggunkana pendekatan Sistem Rekomendasi: Content-based Filtering, untuk memberikan rekomendasi Anime.
+- Kita akan menggunakan model dengan metrik `cosine_similarity` untuk menentukan kemiripan dari suatu judul Anime dalam memberikan suatu hasil rekomendasi.
 - Kita akan menggunkana metrik `Precision` untuk menilai seberapa akurat hasil rekomendasi dari sistem rekomendasi yang kita buat.
 
 ## Data Understanding
