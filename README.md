@@ -148,7 +148,7 @@ Oleh karena itu di proses ini kita akan melakukan 2 proses yaitu:
 
 **Langsung saja kita mulai dari yang pertama yaitu:**
 
-**1.  Kita akan menghapus nilai score yang -1.**
+**1.  Kita akan mengubah nilai score yang -1.**
 
 Penghapusan ini penting mengingat nilai -1 terjadi karena user menonton anime tersebut tapi tidak memberikan score, maka dari itu supaya nilai -1 ini tidak mempengaruhi sitem rekomendasi kita, kita akan menggantinya dengan nilai NaN / kosong supaya bisa kita hapus baris data yang mengandung nilai -1.
 
@@ -164,18 +164,40 @@ Kita akan melihatnya dengan kode `data_anime.loc[(data_anime['score']==-1)]`.
 Dari hasil kode diatas kita bisa lihat bahwa:
 - Ada 5.296 baris yang mengandung nilai -1 di kolom score.
 
-Pertama kita buat variabel baru dengan nama `anime_clean` yang akan diisi dengan data_anime dengan kode `anime_clean = data_anime.copy()`.
+Lanjut keproses mengubah nilai -1 menjadi Nan.
 
-Setelah itu kita mengganti nilai -1 dengan fungsi `.replace({-1: np.nan}, inplace=True)`, nilai di dalam `{-1: np.nan}` berarti -1 diganti dengan nilai NaN dan `inplace=True` supaya jika kita berhasil mengganti nilai rating_user mengembalinkan nilai None / tidak ada.
+- Pertama kita buat variabel baru dengan nama `anime_clean` yang akan diisi dengan data_anime dengan kode `anime_clean = data_anime.copy()`.
 
-Setelah itu kita panggil variabel `anime_clean` untuk melihat apakah sudah berubah?
+- Setelah itu kita mengganti nilai -1 dengan fungsi `.replace({-1: np.nan}, inplace=True)`, nilai di dalam `{-1: np.nan}` berarti -1 diganti dengan nilai NaN dan `inplace=True` supaya jika kita berhasil mengganti nilai rating_user mengembalinkan nilai None / tidak ada.
+
+- Setelah itu kita panggil variabel `anime_clean` untuk melihat apakah sudah berubah?
 
 ![image](https://user-images.githubusercontent.com/43197282/183369495-c059cfb1-5239-412a-b812-5dfe27814b26.png)
 
-Hasil di atas menunjukkan bahwa kita berhasil merubah nilai yang tadinya -1 menjadi NaN.
+Hasil di atas menunjukkan bahwa kita berhasil merubah nilai yang tadinya -1 menjadi NaN atau kosong. Sebelum lanjut kita cek lagi apakah nilai -1 nya masih ada atau tidak dengan kode `anime_clean.loc[(anime_clean['score']==-1)]`
 
 ![image](https://user-images.githubusercontent.com/43197282/183370804-a58230b4-77c4-428b-916e-0c8c4a3bb87d.png)
 
+Dari hasil diatas kita bisa yakin bahwa sudah tidak ada nilai -1 di kolom score. Selanjutnya kita akan melanjutkan ke proses selanjutnya.
+
+**2.  Kita akan menghapus data yang kosong.**
+
+Pertama kita cek lagi data yang kosong kita dengan kode `anime_clean.isnull().sum()`.
+
+![image](https://user-images.githubusercontent.com/43197282/183380521-21fc78e6-fa55-450b-8a21-6557b0209fb1.png)
+
+Dari hasil output diatas kita jadi tau bahwa ada tambahan data kosng yaitu pada kolom score sebanyak 5296.
+
+Setelah berhasil kita hapus data kosong dengan kode `anime_clean = anime_clean.dropna(axis = 0, how ='any')`.
+
+- Dimana `axis = 0` berarti hanya mengapus baris yang mengandung nilai kosong.
+- Sedang `how = 'any'` berarti akan menghapus juga jika ada baris atau kolom yang nilainya kosong semua.
+
+Setelah kita jalankan kode diatas kita cek lagi apakah datanya yang kosong sudah terhapus? Kita cek dengan kode `anime_clean.isnull().sum()`.
+
+![image](https://user-images.githubusercontent.com/43197282/183386661-7f4c198d-5a77-4d65-aae3-b98137050c72.png)
+
+Hasilnya sudah tidak ada lagi data kosong di variabel anime_clean.
 
 ## Modeling
 
