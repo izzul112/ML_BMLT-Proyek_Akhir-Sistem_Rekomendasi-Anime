@@ -2,8 +2,6 @@
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
 Anime sebuah film animasi dari Jepang yang sangat populer dan mungkin banyak dari sebagian kalian yang merasa nostalgia ketika waktu kecil sering menontonnya di televisi. Sekarang untuk menontonnya banyak di antara kita yang sering mengunjungi situs-situs *streaming* seperti Bsite, IQiy, atau bahkan di kanal Youtube seperti Ani-One, Muse Indonesia dan Muse Asia.
 
 Kepopuleran Anime saat memang lagi tinggi-tingginya, hal ini disebabkan banyak judul-judul besar Anime yang sudah punya basis penggemar yang besar, di musim panas 2022 ini banyak yang mendapat lanjutan musim keduanya bahkan Anime dengan judul Overlord mendapat kelanjutan musim keempat, dimana kelanjutan series ini sangat di tunggu-tunggu, perilisan musim keempat ini juga di iringi dengan rilisnya volume terbaru dari Light Novel Overlord yaitu volume 15 dan 16, tentu ini makin menambah *hype* dari judul Anime ini.
@@ -26,10 +24,6 @@ Dengan harapan bahwa hal itu bisa meningkatkan keuntungan bagi perusahaan dan te
 - [Referensi]()
 
 ## Business Understanding
-
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
 
 ### Problem Statements
 
@@ -145,14 +139,43 @@ Dari hasil di atas kita tau bahwa di kolom genres memiliki 67 data kosong.
 
 ## Data Preparation
 
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Setelah kita melalui proses Data Understanding, kita menjadi lebih paham tentang seperti apa isi dataset kita.
 
+Oleh karena itu di proses ini kita akan melakukan 2 proses yaitu:
 
+1.  Kita akan menghapus nilai score yang -1.
+2.  Kita akan melihat apakah ada data yang kosong / tidak ada isinya.
 
-**Rubrik/Kriteria Tambahan (Opsional):**
+**Langsung saja kita mulai dari yang pertama yaitu:**
 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+**1.  Kita akan menghapus nilai score yang -1.**
+
+Penghapusan ini penting mengingat nilai -1 terjadi karena user menonton anime tersebut tapi tidak memberikan score, maka dari itu supaya nilai -1 ini tidak mempengaruhi sitem rekomendasi kita, kita akan menggantinya dengan nilai NaN / kosong supaya bisa kita hapus baris data yang mengandung nilai -1.
+
+Sebelum itu kita lihat dulu nilai ada berapa jumlah nilai -1 nya.
+
+Kita akan melihatnya dengan kode `data_anime.loc[(data_anime['score']==-1)]`. 
+- `.loc[]` adalah akses grub baris dan kolom meurut label, dimana kita ingin mengakses kolom score dari data_anime.
+- `==-1` adalah parameter untuk hanya menampilkan kolom score dengan nilai yang sama dengan -1.
+
+![image](https://user-images.githubusercontent.com/43197282/183365451-fd965f7e-204f-406f-8ee1-0b2d008a7e5d.png)
+![image](https://user-images.githubusercontent.com/43197282/183365575-5ade9c68-d1f8-4e8c-8c28-443655a807f3.png)
+
+Dari hasil kode diatas kita bisa lihat bahwa:
+- Ada 5.296 baris yang mengandung nilai -1 di kolom score.
+
+Pertama kita buat variabel baru dengan nama `anime_clean` yang akan diisi dengan data_anime dengan kode `anime_clean = data_anime.copy()`.
+
+Setelah itu kita mengganti nilai -1 dengan fungsi `.replace({-1: np.nan}, inplace=True)`, nilai di dalam `{-1: np.nan}` berarti -1 diganti dengan nilai NaN dan `inplace=True` supaya jika kita berhasil mengganti nilai rating_user mengembalinkan nilai None / tidak ada.
+
+Setelah itu kita panggil variabel `anime_clean` untuk melihat apakah sudah berubah?
+
+![image](https://user-images.githubusercontent.com/43197282/183369495-c059cfb1-5239-412a-b812-5dfe27814b26.png)
+
+Hasil di atas menunjukkan bahwa kita berhasil merubah nilai yang tadinya -1 menjadi NaN.
+
+![image](https://user-images.githubusercontent.com/43197282/183370804-a58230b4-77c4-428b-916e-0c8c4a3bb87d.png)
+
 
 ## Modeling
 
