@@ -29,20 +29,17 @@ Dengan harapan bahwa hal itu bisa meningkatkan keuntungan bagi perusahaan dan te
 
 Menjelaskan pernyataan masalah:
 
-- Anda belum memiliki sistem rekomendasi, yang memberikan rekomendasi-rekomendasi Anime yang mungkin di sukai oleh pengguna di situs *streaming* Anda.
-- Anda belum mengetahui preferensi dari pengguna situs *streaming* Anda.
+- Saat ini Anda belum memiliki model machine learning untuk memberikan rekomendasi Anime.
 
 ### Goals
 
 Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
 
-- Anda ingin meningkatkan pengalaman pengguna dengan memberikan rekomendasi-rekomendasi Anime yang mungkin di sukai oleh pengguna di situs *streaming* Anda.
-- Anda ingin mengetahui preferensi dari pengguna situs *streaming* Anda.
+- Anda ingin menghasilkan model machine learning yang bisa memberikan rekomendasi Anime.
 
 ### Solution statements:
 
 - Kita akan menggunkana pendekatan Sistem Rekomendasi: Content-based Filtering, untuk memberikan rekomendasi Anime.
-- Kita akan menggunakan model dengan metrik `cosine_similarity` untuk menentukan kemiripan dari suatu judul Anime dalam memberikan suatu hasil rekomendasi.
 - Kita akan menggunkana metrik `Precision` untuk menilai seberapa akurat hasil rekomendasi dari sistem rekomendasi yang kita buat.
 
 ## Data Understanding
@@ -215,11 +212,32 @@ Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian,
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
 **Rubrik/Kriteria Tambahan (Opsional):**
+![image](https://user-images.githubusercontent.com/43197282/183836103-2789e957-e682-4e93-b714-2075160a4d33.png)
 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+![image](https://user-images.githubusercontent.com/43197282/183837911-a3d8d5ff-5942-43c1-bcb6-6c5ae6c50708.png)
+![image](https://user-images.githubusercontent.com/43197282/183838000-e81630ce-fcdf-44d3-bd58-0ce8588a4a1c.png)
+
+Dari dua hasil keluaran diatas kita akan menghitungnya dengan rumus Precision = jumlah Anime yang relevan dibagi jumlah Anime yang direkomendasikan.
+
+1. Hasil rekomendasi untuk 'Coboy Bebop' adalah:
+    
+    Precission = 4/5.
+
+    Jadi presisinya = 80%
+
+2. Hasil rekomendasi untuk 'Mobile Suit Gundam' adalah:
+
+    Precission = 5/5.
+
+    Jadi presisinya = 100%
 
 ## Conclusion
 
+Akhirnya kita berhasil membuat sistem rekomendasi Anime dan mengujinya dengan hasil:
+1. 80%.
+2. 100%.
+
+Jika kita rata-rata maka kita mendapat hasil akurasi 90%.
 
 ## Reference
 
