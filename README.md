@@ -38,8 +38,8 @@ Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
 
 ### Solution statements:
 
-- Kita akan menggunkana pendekatan Sistem Rekomendasi: Content-based Filtering, untuk memberikan rekomendasi Anime.
-- Kita akan menggunkana metrik `Precision` untuk menilai seberapa akurat hasil rekomendasi dari sistem rekomendasi yang kita buat.
+- Kita akan menggunakan pendekatan Sistem Rekomendasi: Content-based Filtering, untuk memberikan rekomendasi Anime.
+- Kita akan menggunakan metrik `Precision` untuk menilai seberapa akurat hasil rekomendasi dari sistem rekomendasi yang kita buat.
 
 ## Data Understanding
 
@@ -73,7 +73,7 @@ Sumber dataset yang akan kita gunakan berasal dari [Kaggle](https://www.kaggle.c
 - producers : Nama Produser.
 - studios : Nama studio yang menggerjakan.
 
-Kita akan melakukan sedikit analisis untuk mengethui beberapa hal tentang variabel diatas diantaranya :
+Kita akan melakukan sedikit analisis untuk mengetahui beberapa hal tentang variabel diatas diantaranya :
 
 1. Kita akan melihat ada berapa jumlah baris dari data dalam tampilan tabel.
 2. Kita akan melihat tipe data dari 21 kolom di dataset.
@@ -289,34 +289,24 @@ Pertama kita coba panggil fungsi rekomendasinya seperti kode di bawah, untuk men
 
 Kita coba dulu untuk melihat hasil keluarannya.
 
-![image](https://user-images.githubusercontent.com/43197282/184059142-a3d89e42-acfd-45da-9ecd-05365a3cd0ab.png)
-
-![image](https://user-images.githubusercontent.com/43197282/184059182-e4cee13b-0d6c-41e0-941e-4e3a622accb9.png)
+![image](https://user-images.githubusercontent.com/43197282/184065811-a0f7b54a-9df8-4619-b924-c37d31d60cbe.png)
 
 
 Dari dua hasil keluaran diatas kita akan menghitungnya dengan rumus Precision = jumlah Anime yang relevan dibagi jumlah Anime yang direkomendasikan[2]. Berikut rumusnya.
 
 ![image](https://user-images.githubusercontent.com/43197282/183836103-2789e957-e682-4e93-b714-2075160a4d33.png)
 
-1. Hasil rekomendasi untuk 'Coboy Bebop' adalah:
-    
-    Precission = 4/5.
+1. Hasil rekomendasi untuk 'Overlord' adalah:
 
-    Jadi presisinya = 80%
+    Precission = 3/5.
 
-2. Hasil rekomendasi untuk 'Mobile Suit Gundam' adalah:
+    Jadi presisinya = 60%
 
-    Precission = 5/5.
-
-    Jadi presisinya = 100%
+Dua judul Anime yang lain yaitu "Kaze no Stigma" dan "Hoshizora e Kakaru Hashi" bukan Anime Isekai seperti "Kono Subarashii Sekai ni Shukufuku wo!" atau biasa di kenal dengan judul (KonoSuba).
 
 ## Conclusion
 
-Akhirnya kita berhasil membuat sistem rekomendasi Anime dan mengujinya dengan hasil:
-1. 80%.
-2. 100%.
-
-Jika kita rata-rata maka kita mendapat hasil akurasi 90%.
+Akhirnya kita berhasil membuat sistem rekomendasi Anime dengan pendekatan Content-based Filtering dan juga berhasil mengujinya dengan merekomendasikan Anime dengan judul yang serupa dengan Overlord, dengan akurasi: 60%.
 
 ## Reference
 [1](https://id.wikipedia.org/wiki/MyAnimeList)
