@@ -217,7 +217,7 @@ Seperti yang kita lihat kolom yang tadi kita hapus sudah tidak ada, hanya menyis
 
 ## Modeling
 
-Pada tahap modeling kita akan menggunakan pendekatan Content-based Filtering, pendekatan ini memiliki beberapa kelebihan diantaranya:
+Pada tahap modeling kita akan menggunakan pendekatan Content-based Filtering, pendekatan ini bekerja dengan mencari kemiripan dari setiap Anime yang dilihat oleh pengguna, memiliki beberapa kelebihan diantaranya:
 
 - Pengguna tau bahwa ada Anime dengan fitur yang sama namun dengan judul yang berbeda.
 
@@ -280,8 +280,6 @@ Lanjut kita buat fungsi yang akan memberikan rekomendasi dengan paramenter title
     4. Pilih dari 5 Anime paling mirip
     5. Mengeluarkan indeks Anime
     6. Menampilkan 5 anime paling mirip
-    
-    
 
 ## Evaluation
 
